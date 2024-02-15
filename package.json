@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --base-href /ngx-heatmap-calendar/",
+    "build": "ng build --base-href /ngx-heatmap-calendar/ demo-heatmap",
     "watch": "ng build ngx-heatmap-calendar --watch --configuration development",
     "test": "ng test"
   },
