@@ -1,0 +1,23 @@
+.ngx-heatmap-calendar {
+  display: inline-block;
+
+  .fill-empty {
+    fill: #ddd;
+  }
+
+  .fill-transparent {
+    fill: transparent;
+  }
+
+  .fill-current {
+    fill: currentColor;
+  }
+
+  .text-small {
+    font-size: 9px;
+  }
+
+  .text-month {
+    font-size: 10px;
+  }
+}

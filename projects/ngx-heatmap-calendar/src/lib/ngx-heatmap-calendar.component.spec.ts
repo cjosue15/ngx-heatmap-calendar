@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgxHeatmapCalendarComponent } from './ngx-heatmap-calendar.component';
+import { NgxHeatmapCalendar } from './ngx-heatmap-calendar.component';
 
 describe('NgxHeatmapCalendarComponent', () => {
-  let component: NgxHeatmapCalendarComponent;
-  let fixture: ComponentFixture<NgxHeatmapCalendarComponent>;
+  let component: NgxHeatmapCalendar;
+  let fixture: ComponentFixture<NgxHeatmapCalendar>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NgxHeatmapCalendarComponent]
-    })
-    .compileComponents();
-    
-    fixture = TestBed.createComponent(NgxHeatmapCalendarComponent);
+      imports: [NgxHeatmapCalendar],
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(NgxHeatmapCalendar);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
