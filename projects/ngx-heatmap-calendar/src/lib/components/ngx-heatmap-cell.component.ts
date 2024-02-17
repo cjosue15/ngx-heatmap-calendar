@@ -6,7 +6,6 @@ import {
   Output,
   ViewEncapsulation,
 } from '@angular/core';
-import { GAP, RECT_SIZE } from '../constants';
 import {
   CellData,
   CellProps,
@@ -37,6 +36,8 @@ export class NgxHeatmapCell implements OnInit, CellProps {
   @Input({ required: true }) weekIndex!: number;
   @Input({ required: true }) dayIndex!: number;
   @Input({ required: true }) data!: CellData;
+  @Input({ required: true }) rectSize = 0;
+  @Input({ required: true }) gap = 0;
 
   @Output() onClickCell = new EventEmitter<HeatMapEvent>();
 
@@ -44,13 +45,11 @@ export class NgxHeatmapCell implements OnInit, CellProps {
 
   @Output() onMouseLeaveCell = new EventEmitter<HeatMapEvent>();
 
-  rectSize = RECT_SIZE;
-
   xPosition = 0;
   yPosition = 0;
 
   ngOnInit() {
-    this.xPosition = this.weekIndex * (RECT_SIZE + GAP);
-    this.yPosition = this.dayIndex * (RECT_SIZE + GAP);
+    this.xPosition = this.weekIndex * (this.rectSize + this.gap);
+    this.yPosition = this.dayIndex * (this.rectSize + this.gap);
   }
 }

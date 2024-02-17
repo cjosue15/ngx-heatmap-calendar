@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 
-import { GAP, RECT_SIZE, WIDTH_LABEL } from '../constants';
+import { GAP, WIDTH_LABEL } from '../constants';
 
 @Component({
   selector: 'g[ngx-heatmap-month]',
@@ -24,12 +24,14 @@ import { GAP, RECT_SIZE, WIDTH_LABEL } from '../constants';
 })
 export class NgxHeatmapMonth implements OnInit {
   @Input({ required: true }) index!: number;
+  @Input({ required: true }) rectSize = 0;
+  @Input({ required: true }) gap = 0;
 
   yPosition = 0;
   xPosition = 0;
 
   ngOnInit() {
     this.yPosition = 0;
-    this.xPosition = this.index * (RECT_SIZE + GAP) + WIDTH_LABEL;
+    this.xPosition = this.index * (this.rectSize + this.gap) + WIDTH_LABEL;
   }
 }

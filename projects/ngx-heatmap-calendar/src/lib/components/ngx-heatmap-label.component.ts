@@ -1,7 +1,5 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 
-import { GAP, RECT_SIZE } from '../constants';
-
 @Component({
   selector: 'g[ngx-heatmap-label]',
   template: `
@@ -34,10 +32,12 @@ import { GAP, RECT_SIZE } from '../constants';
 export class NgxHeatmapLabel implements OnInit {
   @Input({ required: true }) label!: string;
   @Input({ required: true }) index!: number;
+  @Input({ required: true }) rectSize = 0;
+  @Input({ required: true }) gap = 0;
 
   yPosition = 0;
 
   ngOnInit() {
-    this.yPosition = this.index * (RECT_SIZE + GAP);
+    this.yPosition = this.index * (this.rectSize + this.gap);
   }
 }

@@ -11,9 +11,7 @@ import {
   convertToDate,
   getEmptyDaysAtStart,
   getNumberDays,
-  getRange,
   getWeeksCount,
-  shiftDate,
 } from './helpers';
 import {
   CellData,
@@ -24,6 +22,7 @@ import {
 import {
   DAYS_IN_WEEK,
   GAP,
+  HEIGHT_LABEL,
   MILISECONDS_IN_DAY,
   RECT_SIZE,
   WIDTH_LABEL,
@@ -61,6 +60,14 @@ export class NgxHeatmapCalendar implements OnInit, HeatMapProps {
 
   @Input() dates: HeatMapDate[] = [];
 
+  @Input() showMonthLabel = true;
+
+  @Input() showDayLabel = true;
+
+  @Input() rectSize = RECT_SIZE;
+
+  @Input() gap = GAP;
+
   @Input() classForValue?: (value: HeatMapDate) => string;
 
   @Output() onClickCell = new EventEmitter<HeatMapEvent>();
@@ -77,6 +84,14 @@ export class NgxHeatmapCalendar implements OnInit, HeatMapProps {
 
   get daysInWeek() {
     return DAYS_IN_WEEK;
+  }
+
+  get heightLabel() {
+    return this.showMonthLabel ? HEIGHT_LABEL : 0;
+  }
+
+  get widthLabel() {
+    return this.showDayLabel ? WIDTH_LABEL : 0;
   }
 
   generateDataForCell(index: number): CellData {
@@ -108,11 +123,17 @@ export class NgxHeatmapCalendar implements OnInit, HeatMapProps {
   }
 
   getWidthHeatMap() {
-    return (RECT_SIZE + GAP) * this.getWeeksCount() - GAP + WIDTH_LABEL;
+    return (
+      (this.rectSize + this.gap) * this.getWeeksCount() -
+      this.gap +
+      this.widthLabel
+    );
   }
 
   getHeigthHeatMap() {
-    return (RECT_SIZE + GAP) * DAYS_IN_WEEK - GAP + 20;
+    return (
+      (this.rectSize + this.gap) * DAYS_IN_WEEK - this.gap + this.heightLabel
+    );
   }
 
   getWeeksCount() {
