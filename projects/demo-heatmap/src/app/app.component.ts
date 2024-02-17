@@ -35,21 +35,11 @@ export class AppComponent {
     }
   };
 
-  constructor() {
-    console.log(this.dates);
+  onClickCell(event: HeatMapEvent) {
+    alert(
+      `The value is: ${event.data.value} and the date is: ${event.data.date}`,
+    );
   }
-
-  // onClickCell(event: HeatMapEvent) {
-  //   console.log(event);
-  // }
-  //
-  // mouseEnter(event: HeatMapEvent) {
-  //   console.log(event);
-  // }
-  //
-  // mouseLeave(event: HeatMapEvent) {
-  //   console.log(event);
-  // }
 }
 
 function generateRandomDate(startDate: Date, endDate: Date) {
