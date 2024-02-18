@@ -10,9 +10,10 @@ npm install ngx-heatmap-calendar
 
 > [!WARNING]
 > Be careful with the dates:
-> if you use the dates in this way, `new Date('2024-01-01')` the result should be `2024-01-01T00:00:00.000Z`
-> and not `2024-01-01T00:00:00.000` because of the timezone.
+> if you use the dates in this way, `new Date('2024-01-01')` the result is one day before because of your timezone.
+> but if yo set the date like this `new Date(2024,0,1)` the reslt is `2024-01-01T00:00:00.000` because the timezone is not considered and the day is correct.
 > This library uses the date format set by your browser, and assumes that you are passing the correct day with the times in `00:00:00`, so it can correctly match with the array of dates
+> You can control by yourself the date format and the time, or you can use a library like `date-fns` or `dayjs` to handle the dates.
 
 ### Inputs
 
