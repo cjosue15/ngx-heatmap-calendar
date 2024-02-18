@@ -1,6 +1,6 @@
 {
   "name": "ngx-heatmap-calendar",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -38,5 +38,22 @@
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1",
     "typescript": "~5.2.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cjosue15/ngx-heatmap-calendar"
+  },
+  "homepage": "https://cjosue15.github.io/ngx-heatmap-calendar/",
+  "keywords": [
+    "ngx-heatmap-calendar",
+    "heatmap",
+    "calendar",
+    "angular",
+    "angular-heatmap-calendar",
+    "angular-heatmap",
+    "angular-calendar",
+    "angular-heatmap-calendar",
+    "ngx-calendar",
+    "ngx-heatmap"
+  ]
 }
