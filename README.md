@@ -1,6 +1,6 @@
 # Ngx Heatmap Calendar
 
-This is a simple calendar heatmap component for Angular 17+.
+This is a simple heatmap calendar component for Angular 17+.
 
 ### Installation
 
