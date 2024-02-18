@@ -1,6 +1,6 @@
 {
   "name": "ngx-heatmap-calendar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple visualizer to display values by date, based on Github contribution history.",
   "repository": {
     "type": "git",
