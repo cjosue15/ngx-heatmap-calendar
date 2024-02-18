@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import {
   HeatMapDate,
   HeatMapEvent,
@@ -10,7 +9,7 @@ import { AngularLogo } from './angular-logo';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgxHeatmapCalendar, AngularLogo],
+  imports: [NgxHeatmapCalendar, AngularLogo],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
